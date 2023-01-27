@@ -14,7 +14,7 @@ const Input = ({handleSubmit}) => {
         setText('');
         handleSubmit(text);
     }
-
+    
     return(
         <form onSubmit={onSubmit}>
             <input onChange={onChange} value={text} type='text' placeholder='Enter your message' autoFocus={true}/>

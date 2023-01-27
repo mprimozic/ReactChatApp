@@ -6,7 +6,7 @@ const Messages = ({messages, currentUser}) => {
         const {text, member} = message;
         const myMessage = member.id === currentUser.id;
         const className = myMessage ?
-            "Messages-message currentMember" : "Messages-message";
+        'Messages-message currentMember' : 'Messages-message';
         return (
             <li key={index} className={className}>
                 <span 
@@ -14,9 +14,9 @@ const Messages = ({messages, currentUser}) => {
                     style={{backgroundColor: member.clientData.color}} >
                        
                 </span>
-                <div className="Message-content">
-                    <div className="username">{member.clientData.username}</div>
-                    <div className="text">{text}</div>
+                <div className='Message-content'>
+                    <div className='username'>{member.clientData.username}</div>
+                    <div className='text'>{text}</div>
                 </div>
             </li>
         );
@@ -24,7 +24,7 @@ const Messages = ({messages, currentUser}) => {
 
 
     return(
-        <ul className="Messages-list">
+        <ul className='Messages-list'>
             {
                 messages.map((message, index) => (
                   renderMessage(message, index)
