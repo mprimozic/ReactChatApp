@@ -11,6 +11,10 @@ const Input = ({handleSubmit}) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        if(!e.target.childNodes[0].value) {
+            alert('Enter message');
+            return;
+        }
         setText('');
         handleSubmit(text);
     }

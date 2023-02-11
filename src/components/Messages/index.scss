@@ -34,6 +34,7 @@
             color: white;
             display: inline-block;
             text-align: left;
+            overflow: auto;
         }
       }   
 }
@@ -45,5 +46,6 @@
     margin: 0 auto;
     list-style: none;
     padding-left: 0;
+    flex: 1;
     overflow: auto;
   }

@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Messages from './components/Messages';
 import Input from './fragments/Input';
+import './App.css';
 
 const randomName = () => {
   const adjectives = ["autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark", "summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter", "patient", "twilight", "dawn", "crimson", "wispy", "weathered", "blue", "billowing", "broken", "cold", "damp", "falling", "frosty", "green", "long", "late", "lingering", "bold", "little", "morning", "muddy", "old", "red", "rough", "still", "small", "sparkling", "throbbing", "shy", "wandering", "withered", "wild", "black", "young", "holy", "solitary", "fragrant", "aged", "snowy", "proud", "floral", "restless", "divine", "polished", "ancient", "purple", "lively", "nameless"];
@@ -34,9 +35,9 @@ export default class App extends Component {
       if (error) {
         return console.error(error);
       }
-      const member = {...this.state.member};
+      const {member} = this.state;
       member.id = this.drone.clientId;
-      this.setState({member});
+      this.setState({member: member});
     });
     // subscribe to the room named "observable-room"
     const room = this.drone.subscribe('observable-room');
@@ -54,10 +55,10 @@ export default class App extends Component {
   render() {
     const {messages, member} = this.state;
     return(
-      <>
+      <div className='App'>
         <Messages messages={messages} currentUser={member}/>
         <Input handleSubmit={this.onSendMessage}/>
-      </>
+      </div>
     );
   }
 

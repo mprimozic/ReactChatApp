@@ -1,6 +1,17 @@
+import { useEffect, useRef } from 'react';
 import './index.scss';
 
 const Messages = ({messages, currentUser}) => {
+
+    // const container = useRef(null);
+    // const scroll = () => {
+    //     if (container.current){
+    //         container.current.scrollTop = container.scrollHeight;
+    //     }
+    // }
+    // useEffect(() => {
+    //     scroll();
+    // }, [messages])
 
     const renderMessage = (message, index) => {
         const {text, member} = message;
@@ -21,7 +32,6 @@ const Messages = ({messages, currentUser}) => {
             </li>
         );
     }
-
 
     return(
         <ul className='Messages-list'>
